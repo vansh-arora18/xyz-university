@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+}
+
+.tabledata {
+  padding-top: 0;
+}
+
+.heading-bg {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(44, 46, 55);
+}
+
+.separator,
+tr {
+  /* border: 1px solid red; */
+  background-color: rgb(232, 232, 232);
+}
+
+.heading-bg th {
+  color: white;
+}
+
+#nontpp {
+  background-color: rgb(175, 175, 175);
+}
+
+tr {
+  text-align: center;
+}
+
+th {
+  font-size: 1.2em;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+td {
+  z-index: -1;
+}
+
+@media only screen and (max-width: 450px) {
+  .tabledata {
+    height: 420px;
+  }
+}
+
+button {
+  border: none;
+}

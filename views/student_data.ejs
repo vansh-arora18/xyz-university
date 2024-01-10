@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home-style.css" />
+    <link rel="stylesheet" href="/css/tpp.css" />
+    <link rel="stylesheet" href="/css/add.css" />
+    <link rel="stylesheet" href="/css/student_data.css" />
+  </head>
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+      <%- include("sidebar"); -%>
+      <div class="content">
+        <div class="contentHeading">
+          <h2>Student's Information</h2>
+        </div>
+        <div class="formDetails">
+          <div class="table">
+            <h3>
+              <span>Name:</span> <span class="info"><%=student.Name%></span>
+            </h3>
+            <h3>
+              <span>Section:</span>
+              <span class="info"><%=student.Section%></span>
+            </h3>
+            <h3>
+              <span>Batch:</span> <span class="info"><%=student.Batch%></span>
+            </h3>
+            <h3>
+              <span>UID:</span> <span class="info"><%=student.UID%></span>
+            </h3>
+            <h3>
+              <span>CGPA:</span> <span class="info"><%=student.Cgpa%></span>
+            </h3>
+            <h3>
+              <span>DOB:</span> <span class="info"><%=student.DOB%></span>
+            </h3>
+            <h3>
+              <span>Gender:</span> <span class="info"><%=student.Gender%></span>
+            </h3>
+            <h3>
+              <span>Mentor:</span> <span class="info"><%=student.Mentor%></span>
+            </h3>
+          </div>
+          <div class="table table-good">
+            <h3>
+              <span>Phone No:</span>
+              <span class="info"><%=student.Phone_Number%></span>
+            </h3>
+            <h3>
+              <span>Father's Name:</span>
+              <span class="info"><%=student.Father_Name%></span>
+            </h3>
+            <h3>
+              <span>Father's Phone No:</span>
+              <span class="info"><%=student.Father_Number%></span>
+            </h3>
+            <h3>
+              <span>Address:</span>
+              <span class="info"><%=student.Address%></span>
+            </h3>
+            <h3>
+              <span>10th Percentage:</span>
+              <span class="info"><%=student.Tenth_Marks%></span>
+            </h3>
+            <h3>
+              <span>12th Percentage:</span>
+              <span class="info"><%=student.Twelveth_Marks%></span>
+            </h3>
+            <h3>
+              <span>CU Mail-id:</span>
+              <span class="info"><%=student.cumail%></span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home-style.css" />
+    <link rel="stylesheet" href="css/add.css" />
+    <link rel="stylesheet" href="css/mentor.css" />
+  </head>
+
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+        <%- include("sidebar"); -%>
+        <div class="content">
+        <div class="contentHeading">
+          <h1>Mentor's Profile</h1>
+        </div>
+        <div class="formDetails">
+          <h3>Add Through CSV File : </h3>
+        </div>
+        <form class="addcsv" action="/addcsv" method="POST" enctype="multipart/form-data">
+          <label for="file">Add csv file here : </label>
+          <input  type="file" name="file" id="file">
+          <button type="submit" class="submit">Upload</button>
+        </form>
+        <hr>
+        <div class="formDetails">
+          <h3>OR</h3>
+        </div>
+        <div class="formDetails">
+          <h3>Add Particular Mentor's Data : </h3>
+        </div>
+        <% if(success != " "){ %>
+        <div class="alert alert-success">
+          <h3><%=success%></h3>
+        </div>
+        <% }%>
+  <div class="mentor">
+        <form action="/mentor" method="POST" id="formSubmit" class="formDetails">
+          
+          <div class="table">
+            <label for="MentorName">Mentor's Name <span>*</span></label>
+            <input type="text" id="MentorName" name="Mentor_Name" required />
+            <label for="Section">Section: <span>*</span></label>
+            <select name="Section" id="Section" required>
+              <option value="AIML1A">19AML1A</option>
+              <option value="AIML1B">19AML1B</option>
+              <option value="AIML2A">20AML1A</option>
+              <option value="AIML2B">20AML1B</option>
+              <option value="AIML3A">20AML2A</option>
+              <option value="AIML3B">20AML2B</option>
+              <option value="AIML4A">20AML3A</option>
+              <option value="AIML4B">20AML3B</option>
+              <option value="AIML2A">20AML4A</option>
+              <option value="AIML2B">20AML4B</option>
+              <option value="AIML3A">20AML5A</option>
+              <option value="AIML3B">20AML5B</option>
+              <option value="AIML3A">20AML6A</option>
+              <option value="AIML3B">20AML6B</option>
+              <option value="AIML2A">21AML1A</option>
+              <option value="AIML2B">21AML1B</option>
+              <option value="AIML3A">21AML2A</option>
+              <option value="AIML3B">21AML2B</option>
+              <option value="AIML4A">21AML3A</option>
+              <option value="AIML4B">21AML3B</option>
+              <option value="AIML2A">21AML4A</option>
+              <option value="AIML2B">21AML4B</option>
+              <option value="AIML3A">21AML5A</option>
+              <option value="AIML3B">21AML5B</option>
+              <option value="AIML4A">21AML6A</option>
+              <option value="AIML4B">21AML6B</option>
+              <option value="AIML2A">21AML7A</option>
+              <option value="AIML2B">21AML7B</option>
+              <option value="AIML3A">21AML8A</option>
+              <option value="AIML3B">21AML8B</option>
+              <option value="AIML4A">21AML9A</option>
+              <option value="AIML4B">21AML9B</option>
+            </select>
+
+            <label for="Batch">Batch: <span>*</span></label>
+            <select name="Batch" id="Batch" required>
+              <option value="2020-2024">2020-2024</option>
+              <option value="2021-2025">2021-2025</option>
+              <option value="2022-2026">2022-2026</option>
+              <option value="2023-2027">2023-2027</option>
+              <option value="2024-2028">2024-2028</option>
+            </select>
+            </div>
+
+            <div class="table">
+
+            <label for="emp_id">Emp-id: <span>*</span></label>
+            <input type="text" id="emp_id" name="Emp_id" required />
+
+           
+
+            <label for="phn_number">Phone Number : <span>*</span></label>
+            <input type="text" id="phn_number" name="Phone_Number" required />
+ 
+            <label for="cumail">CU Mail ID: <span>*</span></label>
+            <input type="email" id="cumail" name="cumail">
+        </div>
+    </div>
+         </div>
+           </div>
+        </form>
+        <div class="formDetails">
+        <input type="submit" form="formSubmit" value="Submit" class="submit" />
+        </div>
+      
+      </div>
+    </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

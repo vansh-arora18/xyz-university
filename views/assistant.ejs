@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home-style.css" />
+    <link rel="stylesheet" href="css/add.css" />
+  </head>
+
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+        <%- include("sidebar"); -%>
+        <div class="content">
+        <div class="contentHeading">
+          <h1>Lab Assistant's Profile</h1>
+        </div>
+        <div class="formDetails">
+          <h3>Add Through CSV File : </h3>
+        </div>
+        <form class="addcsv" action="/addcsv" method="POST" enctype="multipart/form-data">
+          <label for="file">Add csv file here : </label>
+          <input  type="file" name="file" id="file">
+          <button type="submit" class="submit">Upload</button>
+        </form>
+        <hr>
+        <div class="formDetails">
+          <h3>OR</h3>
+        </div>
+        <div class="formDetails">
+          <h3>Add Single Lab Assistant Data : </h3>
+        </div>
+        
+        <form action="" method="POST" id="formSubmit" class="formDetails">
+          <div class="table">
+            <label for="AssistantName">Name <span>*</span></label>
+            <input type="text" id="AssistantName" name="Name" required />
+
+            <label for="Ecode">Ecode: <span>*</span></label>
+            <input type="text" id="Ecode" name="Ecode" required />
+
+            <label for="number">Phone Number : <span>*</span></label>
+            <input type="text" id="number" name="Phone_Number" required />
+           <label for="labno">Lab No.: <span>*</span></label>
+            <select name="labno" id="lab_no">
+                <option value="207">207</option>
+                <option value="208">208</option>
+                <option value="306">306</option>
+                <option value="307">307</option>
+                <option value="308">308</option>
+                <option value="317">317</option>
+                <option value="318">318</option>
+                <option value="408">408</option>
+                <option value="409">409</option>
+                <option value="410">410</option>
+                <option value="411">411</option>
+                <option value="412">412</option>
+                <option value="413">413</option>
+                <option value="414">414</option>
+                <option value="415">415</option>
+                <option value="416">416</option>
+                <option value="512">512</option>
+                <option value="513">513</option>
+                <option value="514">514</option>
+                <option value="101">101</option>
+                <option value="209">209</option>
+                <option value="210">210</option>
+                <option value="106">106</option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                <option value="104">104</option>
+               
+            </select>
+
+             <label for="Block">Block <span>*</span></label>
+             <select name="Block" id="Block">
+             <option value="D2">D2</option>
+             <option value="D3">D3</option>
+             <option value="D4">D4</option>
+                
+             </select>
+
+        
+
+            
+
+          </div>
+          
+
+           
+        </form>
+        <div class="formDetails">
+        <input type="submit" form="formSubmit" value="Submit" class="submit" />
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

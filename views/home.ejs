@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home-style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+      <%- include("sidebar"); -%>
+      <div class="content">
+        <div class="contentHeading">
+          <h2><span>XYZ</span> University</h2>
+          <p>(Student Management System)</p>
+        </div>
+        <div class="contentContainer">
+          <a class="boxes" href="/add_data">
+            <div class="boxHeading">
+              <h3>Add Data</h3>
+            </div>
+            <div class="boxContent">
+              <div class="boxPara">
+                <p>Click here to Add Data</p>
+              </div>
+            </div>
+          </a>
+          <a class="boxes" href="/update">
+            <div class="boxHeading">
+              <h3>Update Data</h3>
+            </div>
+            <div class="boxContent">
+              <div class="boxPara">
+                <p>Click here to Update Data for Student</p>
+              </div>
+            </div>
+          </a>
+          <a class="boxes" href="/delete">
+            <div class="boxHeading">
+              <h3>Delete Data</h3>
+            </div>
+            <div class="boxContent">
+              <div class="boxPara">
+                <p>Click here to Delete Data for Student</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

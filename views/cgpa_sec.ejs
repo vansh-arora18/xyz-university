@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home-style.css" />
+    <link rel="stylesheet" href="/css/tpp.css" />
+  </head>
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+      <%- include("sidebar"); -%>
+        <div class="content">
+          
+            <div class="contentHeading">
+                <h2><%=name%></h2>
+            </div>
+          <div class="selectCB">
+            <div class="selector">
+            <form action= "/cgpa_sec" method="POST">
+            <label for="Section">Section: <span>*</span></label>
+            <select name="Section" id="Section" required>
+                              <% for(const i of section){%>
+                <option value=<%=i%>><%=i%></option>
+                <%}%>
+
+            </select>
+            </div>
+            <div class="selector">
+            <label for="CGPA">CGPA Based: <span>*</span></label>
+            <select name="CGPA" id="CGPA" required>
+              <option value="9.5">Greater than 9.5</option>
+              <option value="9">Greater than 9</option>
+              <option value="8.5">Greater than 8.5</option>
+              <option value="8">Greater than 8</option>
+              <option value="7.5">Greater than 7.5</option>
+              <option value="7">Greater than 7</option>
+              <option value="6.5">Greater than 6.5</option>
+              <option value="6">Greater than 6</option>
+              <option value="5">Greater than 5</option>
+              <option value="4">Fail Student</option>
+            </select>
+            </div>
+            <input type="text" name="value" value = "<%= name %>" hidden>
+                        <input type="text" name="batch" value="<%= batch %>" hidden />
+            <button id="submit" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
+

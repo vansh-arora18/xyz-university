@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/home-style.css" />
+    <link rel="stylesheet" href="css/tpp.css" />
+    <link rel="stylesheet" href="css/tabledata.css" />
+  </head>
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+      <%- include("sidebar"); -%>
+      <div class="content">
+        <div class="contentHeading">
+          <h2><%=name%></h2>
+        </div>
+        <div class="tabledata">
+          <table>
+            <tr class="heading-bg">
+              <th>Name</th>
+              <th>UID</th>
+              <th><%=name%></th>
+            </tr>
+
+            <!-- tpp -->
+            <%values.forEach(value =>{ %> <%if(name == "TPP"){%> <% if(value.TPP
+            == "nontpp"){ %>
+            <tr id="nontpp">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>"
+                  ><%= (value.UID).toUpperCase() %></a
+                >
+              </td>
+              <td><%= (value.TPP).toUpperCase() %></td>
+            </tr>
+            <% } else { %>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>"
+                  ><%= (value.UID).toUpperCase() %></a
+                >
+              </td>
+              <td><%= (value.TPP).toUpperCase() %></td>
+            </tr>
+            <%} } }) %> <%values.forEach(value =>{ %> <%if(name == "CR"){%> <%
+            if(value.CR == "cr"){ %>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>">
+                  <%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td><%= (value.CR).toUpperCase() %></td>
+            </tr>
+            <%}}}) %> <%values.forEach(value =>{ %> <%if(name == "PLACED"){%> <%
+            if(value.Placed == "Non Placed"){ %>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>">
+                  <%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td><%= (value.Placed).toUpperCase() %></td>
+            </tr>
+            <%}else { %>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>"
+                  ><%= (value.UID).toUpperCase() %></a
+                >
+              </td>
+              <td><%= (value.Placed).toUpperCase() %></td>
+            </tr>
+            <%}}}) %> <%values.forEach(value =>{ %> <%if(name == "LEET"){%> <%
+            if(value.Leet == "Non Lateral Entry"){ %>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>">
+                  <%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td><%= (value.Leet).toUpperCase() %></td>
+            </tr>
+            <%}else { %>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>"
+                  ><%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td><%= (value.Leet).toUpperCase() %></td>
+            </tr>
+            <%}}}) %> <%values.forEach(value =>{ %> <%if(name == "UPDATE"){%>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>">
+                  <%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td>
+                <form action="/edit" method="POST">
+                  <input type="text" name="UID" value="<%=value.UID%>" hidden />
+                  <button type="submit">
+                    <img src="../images/edit-3.png" alt="" />
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <%}}) %> <%values.forEach(value =>{ %> <%if(name == "DELETE
+            STUDENT"){%>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>">
+                  <%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td>
+                <form action="/deleteStudent" method="POST">
+                  <input type="text" name="UID" value="<%=value.UID%>" hidden />
+                  <button type="submit">
+                    <img src="../images/bin.png" alt="" />
+                  </button>
+                </form>
+              </td>
+            </tr>
+            <%}}) %> <%values.forEach(value =>{ %> <%if(name == "CGPA"){%>
+            <tr class="separator">
+              <td><%= (value.Name).toUpperCase() %></td>
+              <td>
+                <a href="/search/<%=value.UID%>">
+                  <%= (value.UID).toUpperCase() %>
+                </a>
+              </td>
+              <td><%=(value.Cgpa).toUpperCase()%></td>
+            </tr>
+            <%}}) %>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home-style.css" />
+    <link rel="stylesheet" href="css/add.css" />
+  </head>
+
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+        <%- include("sidebar"); -%>
+        <div class="content">
+        <div class="contentHeading">
+          <h2>Edit Profile</h2>
+        </div>
+        <form action="/editdata" method="POST" id="formSubmit" class="formDetails">
+          <div class="table">
+            <label for="StudentName">Name <span>*</span></label>
+            <input type="text" id="StudentName" name="Name" value="<%=student.Name%>" required />
+
+            <!-- <label for="Section">Section <span>*</span></label>
+            <input type="text" id="Section" name="section" required /> -->
+            <label for="Section">Section: <span>*</span></label>
+            <select name="Section" id="Section" required>
+              <option value="AIML1A" <%if(student.Section == "AIML1A"){%> selected <%}%>>AIML1A</option>
+              <option value="AIML1B" <%if(student.Section == "AIML1B"){%> selected <%}%>>AIML1B</option>
+              <option value="AIML2A" <%if(student.Section == "AIML2A"){%> selected <%}%>>AIML2A</option>
+              <option value="AIML2B" <%if(student.Section == "AIML2B"){%> selected <%}%>>AIML2B</option>
+              <option value="AIML3A" <%if(student.Section == "AIML3A"){%> selected <%}%>>AIML3A</option>
+              <option value="AIML3B" <%if(student.Section == "AIML3B"){%> selected <%}%>>AIML3B</option>
+              <option value="AIML4A" <%if(student.Section == "AIML4A"){%> selected <%}%>>AIML4A</option>
+              <option value="AIML4B" <%if(student.Section == "AIML4B"){%> selected <%}%>>AIML4B</option>
+            </select>
+
+            <label for="Batch">Batch: <span>*</span></label>
+            <select name="Batch" id="Batch" required>
+              <option value="2020-2024" <%if(student.Batch == "2020-2024"){%> selected <%}%>>2020-2024</option>
+              <option value="2021-2025" <%if(student.Batch == "2021-2025"){%> selected <%}%>>2021-2025</option>
+              <option value="2022-2026" <%if(student.Batch == "2022-2026"){%> selected <%}%>>2022-2026</option>
+              <option value="2023-2027" <%if(student.Batch == "2023-2027"){%> selected <%}%>>2023-2027</option>
+              <option value="2024-2028" <%if(student.Batch == "2024-2028"){%> selected <%}%>>2024-2028</option>
+            </select>
+
+            <label for="UserId">UID: <span>*</span></label>
+            <input type="text" id="UserId" name="UID" value="<%=student.UID%>" required />
+
+            <label for="date">DOB: <span>*</span></label>
+            <input type="date" id="date" name="DOB" value="<%=student.DOB%>" required />            
+
+            <label for="Gender">Gender: <span>*</span></label>
+            <select name="Gender" id="Gender" required>
+              <option value="Male" <%if(student.Gender == "Male"){%> selected <%}%>>Male</option>
+              <option value="Female" <%if(student.Gender == "Female"){%> selected <%}%>>Female</option>
+              <option value="Others" <%if(student.Gender == "Others"){%> selected <%}%>>Others</option>
+            </select>
+
+            <label for="number">Phone Number : <span>*</span></label>
+            <input type="text" id="number" name="Phone_Number" value="<%=student.Phone_Number%>" required />
+
+            <label for="father_no">Father's Phone Number: <span>*</span></label>
+            <input type="text" id="father_no" name="Father_Number" value="<%=student.Father_Number%>" required />
+
+            <label for="father">Father's Name: <span>*</span></label>
+            <input type="text" id="father" name="Father_Name" value="<%=student.Father_Name%>" required />
+
+            <label for="placed">Placed: <span>*</span></label>
+            <select name="Placed" id="placed" required>
+              <option value="Placed" <%if(student.Placed == "Placed"){%> selected <%}%>>Placed</option>
+              <option value="Non Placed" <%if(student.Placed == "Non Placed"){%> selected <%}%>>Non Placed</option>
+            </select>
+
+            <label for="leet">LEET Student: <span>*</span></label>
+            <select name="Leet" id="leet" required>
+              <option value="Lateral Entry" <%if(student.Leet == "Lateral Entry"){%> selected <%}%>>Lateral entry</option>
+              <option value="nonleet" <%if(student.Leet == "Non Lateral Entry"){%> selected <%}%>>Non Lateral entry</option>
+            </select>
+
+          </div>
+          <div class="table ready">
+
+            <label for="address">Address: <span>*</span></label>
+            <input type="text" id="address" name="Address" value="<%=student.Address%>">
+
+            <label for="10th">10th Percentage: <span>*</span></label>
+            <input type="text" id="10th" name="Tenth_Marks" value="<%=student.Tenth_Marks%>">
+
+            <label for="12th">12th Percentage: <span>*</span></label>
+            <input type="text" id="12th" name="Twelveth_Marks" value="<%=student.Twelveth_Marks%>">
+
+            <label for="cumail">CU Mail ID: <span>*</span></label>
+            <input type="email" id="cumail" name="cumail" value="<%=student.cumail%>">
+
+            <label for="tpp">TPP: <span>*</span> </label>
+            <select name="TPP" id="tpp" required>
+              <option value="TPP" <%if(student.TPP == "TPP"){%> selected <%}%>>TPP</option>
+              <option value="NON TPP" <%if(student.TPP == "NON TPP"){%> selected <%}%>>NON-TPP</option>
+            </select>
+
+            <label for="cgpa">CGPA: <span>*</span></label>
+            <input type="text" id="cgpa" required name="Cgpa" value="<%=student.Cgpa%>"/>
+
+            <label for="clubs">Clubs Joined: <span>*</span> </label>
+            <select name="Clubs_Joined" id="clubs" size="2" required multiple>
+              <option value="Dance" <%if(student.Clubs_Joined.includes("Dance")){%> selected <%}%>>Dance</option>
+              <option value="Singing" <%if(student.Clubs_Joined.includes("Singing")){%> selected <%}%>>Singing</option>
+              <option value="none" <%if(student.Clubs_Joined.includes("none")){%> selected <%}%>>None</option>
+            </select>
+
+            <label for="Sports">Sports Enrolled: <span>*</span> </label>
+            <select name="Sports_Enrolled" id="sports" size="2" required multiple>
+              <option value="Football" <%if(student.Sports_Enrolled.includes("Football")){%> selected <%}%>>Football</option>
+              <option value="Basketball" <%if(student.Sports_Enrolled.includes("Basketball")){%> selected <%}%>>Basketball</option>
+              <option value="none" <%if(student.Sports_Enrolled.includes("none")){%> selected <%}%>>None</option>
+            </select>
+
+            <label for="cr">Whether CR or Not: <span>*</span> </label>
+            <select name="CR" id="cr" required>
+              <option value="cr" <%if(student.CR == "cr"){%> selected <%}%>>yes</option>
+              <option value="notcr" <%if(student.CR == "notcr"){%> selected <%}%>>no</option>
+            </select>
+
+            <label for="internships"
+              >Internships/Trainings: <span>*</span></label
+            >
+            <select name="Internship" id="internship" required>
+              <option value="Enrolled" <%if(student.Internship == "Enrolled"){%> selected <%}%>>Enrolled</option>
+              <option value="Not-Enrolled" <%if(student.Internship == "Not-Enrolled"){%> selected <%}%>>Not Enrolled</option>
+            </select>
+
+
+            <label for="Mentor">Mentor: <span>*</span></label>
+            <select name="Mentor" id="Mentor" required>
+              <option value="Deepak Mehta" <%if(student.Mentor == "Deepak Mehta"){%> selected <%}%>>Deepak Mehta</option>
+              <option value="Archana Sharma" <%if(student.Mentor == "Archana Sharma"){%> selected <%}%>>Archana Sharma</option>
+              <option value="Leeza Sharma" <%if(student.Mentor == "Leeza Sharma"){%> selected <%}%>>Leeza Sharma</option>
+            </select>
+          </div>
+        </form>
+        <div class="formDetails">
+        <input type="submit" form="formSubmit" value="Update" class="submit" />
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

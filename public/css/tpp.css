@@ -1,0 +1,98 @@
+.selectCB {
+  padding: 35px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.contentHeading {
+  padding-left: 40px;
+}
+#submit {
+  width: 100px;
+  background-color: rgb(36, 149, 36);
+  color: white;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: 0.9em;
+  position: relative;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: blue;
+  position: relative;
+}
+a:hover {
+  text-decoration: underline;
+  top: -3px;
+  left: -1px;
+}
+
+#submit:hover {
+  top: -3px;
+  cursor: pointer;
+}
+
+.selector {
+  margin-right: 80px;
+}
+
+.selector span {
+  color: red;
+}
+
+.selector label {
+  font-size: 1.2em;
+}
+
+.selector select {
+  padding: 0.4em;
+}
+
+.tabledata {
+  padding: 30px;
+  padding-top: 5px;
+  padding-right: 50px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 691px) {
+  .selectCB {
+    margin-top: 0;
+    flex-direction: column;
+    height: 300px;
+  }
+  .tabledata {
+    height: 350px;
+  }
+  .selector {
+    margin: 2em;
+    margin-top: 0;
+  }
+}
+
+.alert {
+  width: 100%;
+  padding: 1px;
+  padding-left: 30px;
+}
+
+.filex {
+  flex-direction: column;
+}
+
+.filex img {
+  width: 180px;
+}
+
+.filex h1 {
+  font-size: 1em;
+}

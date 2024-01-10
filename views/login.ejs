@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,100&family=Playfair+Display&family=Roboto+Condensed:ital,wght@0,400;1,700&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="images/1656248260.ico"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div class="background-image"></div>
+    <div class="container">
+      <div class="contentHeading">
+        <h2><span>XYZ</span> University</h2>
+        <p>(Student Management System)</p>
+      </div>
+      <div class="login-details">
+        <div class="header">
+          <h1>Login</h1>
+        </div>
+        <form action="/login" method="POST">
+          <div class="text">
+            <span class="email-pic"
+              ><img src="images/email-2.png" alt=""
+            /></span>
+            <input
+              type="email"
+              placeholder="Email"
+              name="username"
+              value="demo@gmail.com"
+            />
+          </div>
+          <div class="text">
+            <span class="password-pic"
+              ><img src="images/key.png" alt=""
+            /></span>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value="Karan"
+            />
+          </div>
+          <button type="submit" class="bn30">Login</button>
+          <div class="text resgiter">
+            <a href="/register">Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

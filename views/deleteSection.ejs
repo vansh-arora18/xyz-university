@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home-style.css" />
+    <link rel="stylesheet" href="/css/tpp.css" />
+  </head>
+  <body>
+    <%- include("navbar"); -%>
+    <div class="container">
+      <%- include("sidebar"); -%>
+        <div class="content">
+            <div class="contentHeading">
+                <h2><%=name%></h2>
+            </div>
+            <% if(success != " "){ %>
+              <div class="alert alert-success">
+                <h3><%=success%></h3>
+              </div>
+            <% }%>
+          <div class="selectCB">
+            <div class="selector">
+            <form action= "/deleteSection" method="POST">
+            <label for="Batch">Batch: <span>*</span></label>
+            <select name="Batch" id="Batch" required>
+            <% for(const i of batch){%>
+              <option value=<%=i%>><%=i%></option>
+            <%}%>
+            </select>
+            </div>
+                        <input type="text" name="value" value = "<%= name %>" hidden>
+            <button id="submit" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
+

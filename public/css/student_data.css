@@ -1,0 +1,25 @@
+span {
+  margin-right: 30px;
+  color: black;
+  display: inline-block;
+  width: 200px;
+}
+
+.formDetails {
+  background-color: rgb(243, 243, 243);
+}
+
+.table-good {
+  margin-top: -40px;
+}
+
+.info {
+  font-weight: 2;
+}
+
+
+@media only screen and (max-width: 603px) {
+  span {
+    width: 100px;
+  }
+}
